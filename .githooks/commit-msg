@@ -1,0 +1,6 @@
+#!/bin/sh
+# Hard rule for this repo: Claude is never a co-author or named in commit messages.
+if grep -qiE '^(Co-Authored-By:.*(claude|anthropic)|Claude-Session:)|Generated with \[?Claude' "$1"; then
+  echo "commit-msg: Claude attribution is not allowed in this repo. Remove the trailer." >&2
+  exit 1
+fi

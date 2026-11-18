@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "discord-readonly"
+version = "0.3.0"
+description = "Read-only Discord CLI for a small group server. The bot token lives in the OS keyring."
+requires-python = ">=3.10"
+license = "MIT"
+readme = "README.md"
+dependencies = ["keyring>=25", "tzdata>=2024.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+discord = "discordro.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["discordro*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.urls]
+Homepage = "https://github.com/loftspace/discord-readonly"

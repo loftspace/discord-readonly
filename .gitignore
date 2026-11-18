@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Secrets must never be committed. The bot token lives in Windows Credential Manager.
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+secrets*
+credentials*
